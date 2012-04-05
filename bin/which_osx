@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'which_osx'
+
+puts WhichOSX.version
