@@ -13,13 +13,20 @@ A simple ruby program for returning the version number of the current Mac OS X s
 
 ## SYNOPSIS:
 
+which_osx can be imported into a project and used to return the current version of OS X (as of writing, my computer returns "10.7.3"):
+
     require 'which_osx'
 
     module ForTheREADME
       def self.test
-          who_am_i # WhichOSX.version
+          who_am_i = WhichOSX.version
         end
     end
+
+It also can be used from the command-line:
+
+`$ which_osx`    
+`10.7.3`
 
 ## REQUIREMENTS:
 
