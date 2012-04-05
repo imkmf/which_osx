@@ -13,13 +13,13 @@ A simple ruby program for returning the version number of the current Mac OS X s
 
 ## SYNOPSIS:
 
-  require 'which_osx'
+    require 'which_osx'
 
-  module ForTheREADME
-    def self.test
-        who_am_i # WhichOSX.version
-      end
-  end
+    module ForTheREADME
+      def self.test
+          who_am_i # WhichOSX.version
+        end
+    end
 
 ## REQUIREMENTS:
 
@@ -27,7 +27,7 @@ A simple ruby program for returning the version number of the current Mac OS X s
 
 ## INSTALL:
 
-  sudo gem install which_osx
+    sudo gem install which_osx
 
 ## DEVELOPERS:
 
