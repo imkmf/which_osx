@@ -1,35 +1,35 @@
-= which_osx
+# which_osx
 
 * http://github.com/imkmf/which_osx
 
-== DESCRIPTION:
+## DESCRIPTION:
 
 A simple ruby program for returning the version number of the current Mac OS X system.
 
-== FEATURES/PROBLEMS:
+## FEATURES/PROBLEMS:
 
 * Uses the terminal command `sw_vers` and parses it into a readable format.
 * TODO : Catch if it's *not* OS X - whether that's Windows, or Linux.
 
-== SYNOPSIS:
+## SYNOPSIS:
 
   require 'which_osx'
 
   module ForTheREADME
     def self.test
-        who_am_i = WhichOSX.version
+        who_am_i # WhichOSX.version
       end
   end
 
-== REQUIREMENTS:
+## REQUIREMENTS:
 
 * None
 
-== INSTALL:
+## INSTALL:
 
   sudo gem install which_osx
 
-== DEVELOPERS:
+## DEVELOPERS:
 
 After checking out the source, run:
 
@@ -38,7 +38,7 @@ After checking out the source, run:
 This task will install any missing dependencies, run the tests/specs,
 and generate the RDoc.
 
-== LICENSE:
+## LICENSE:
 
 (The MIT License)
 
