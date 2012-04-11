@@ -1,3 +1,10 @@
+=== 1.0.2 / 2012-04-11
+
+* 2 minor enhancements
+
+  * Better error handling.
+  * Output is cleaner.
+
 === 1.0.1 / 2012-04-04
 
 * 1 minor enhancement

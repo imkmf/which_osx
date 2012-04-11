@@ -3,8 +3,8 @@
 
 module WhichOSX
   def self.version
-    output = `sw_vers`.scan(/\d\d\.\d\.\d/).flatten
-    output.delete "[]\""
+    output = `sw_vers`.scan(/\d\d\.\d\.\d/).flatten.to_s
+    output.delete! "[]\""
     return output
     
   rescue Errno::ENOENT

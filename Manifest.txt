@@ -1,7 +1,0 @@
-.autotest
-History.txt
-Manifest.txt
-README.txt
-Rakefile
-bin/which_osx
-lib/which_osx.rb

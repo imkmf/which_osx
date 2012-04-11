@@ -1,14 +1,34 @@
-# -*- ruby -*-
+require 'rubygems' unless ENV['NO_RUBYGEMS']
+require 'rubygems/package_task'
+require 'rake/rdoctask' unless RUBY_VERSION >= '1.9.0'
+require 'rdoc/task' unless RUBY_VERSION <= '1.9.0'
+require 'rubygems/specification'
+require 'spec/rake/spectask'
 
-require 'rubygems'
-require 'hoe'
+spec = Gem::Specification.load("#{File.dirname(__FILE__)}/which_osx.gemspec")
 
-VERSION = '1.0.1'
+task :default => :spec
 
-Hoe.plugin :hoe_git
+desc "Run specs"
+Spec::Rake::SpecTask.new do |t|
+  t.spec_files = FileList['spec/**/*_spec.rb']
+  t.spec_opts = %w(-fs --color)
+  t.libs << ["spec", '.']
+end
 
-Hoe.spec 'which_osx' do
+desc "Run all examples with RCov"
+Spec::Rake::SpecTask.new('spec:rcov') do |t|
+  t.spec_files = FileList['spec/**/*_spec.rb']
+  t.rcov = true
+  t.rcov_opts = ['-T', '--sort', 'coverage', '--exclude', 'gems/*,spec/*']
+end
 
-  developer('Kristian Freeman', 'kristian@kayeff.me')
+# Gem tasks
+Gem::PackageTask.new(spec) do |pkg|
+  pkg.gem_spec = spec
+end
 
+desc "install the gem locally"
+task :install => [:package] do
+  sh %{gem install pkg/#{spec.name}-#{spec.version}}
 end
