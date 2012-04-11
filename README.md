@@ -1,6 +1,6 @@
 # which_osx
 
-[!The contemplative Mac](http://i.imgur.com/RNIc8.png)
+![The contemplative Mac](http://i.imgur.com/RNIc8.png)
 
 - http://github.com/imkmf/which_osx
 
