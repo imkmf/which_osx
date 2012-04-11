@@ -17,9 +17,9 @@ module WhichOSX
     
   end
 
-  def self.full_version
-    full_version = "Mac OS X " + VERSION
-    return full_version
+  def self.full_name
+    full_name = "Mac OS X " + VERSION
+    return full_name
   end
 
   def self.short_name

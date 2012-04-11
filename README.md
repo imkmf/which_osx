@@ -1,17 +1,20 @@
-= which_osx
+# which_osx
 
-* http://github.com/imkmf/which_osx
+[!The contemplative Mac](http://i.imgur.com/RNIc8.png)
 
-== DESCRIPTION:
+- http://github.com/imkmf/which_osx
 
-A simple ruby program for returning the version number of the current Mac OS X system.
+## DESCRIPTION:
 
-== FEATURES/PROBLEMS:
+A simple ruby program for outputting some information about your Mac.
 
-* Uses the terminal command `sw_vers` and parses it into a readable format.
-* TODO : Catch if it's *not* OS X - whether that's Windows, or Linux.
+## FEATURES/PROBLEMS:
 
-== SYNOPSIS:
+- Uses the terminal command `sw_vers` and parses it into a readable format.
+
+- **This doesn't work on anything but Mac. Seriously. You won't be able to do much with this gem on anywhere but OS X.**
+
+## USAGE:
 
 which_osx can be imported into a project and used to return the current version of OS X (as of writing, my computer returns "10.7.3"):
 
@@ -23,20 +26,28 @@ which_osx can be imported into a project and used to return the current version 
         end
     end
 
-It also can be used from the command-line:
+which_osx version 1.0.3 adds new methods for different outputs:
 
-`$ which_osx`    
-`10.7.3`
+    $ WhichOSX.full_name
+    => Mac OS X 10.7.3
 
-== REQUIREMENTS:
+    $ WhichOSX.short_name
+    => Lion
 
-* None
+Running from the command line returns the OS version by default:
 
-== INSTALL:
+    $ which_osx   
+    => 10.7.3
+
+## REQUIREMENTS:
+
+- None
+
+## INSTALL:
 
     sudo gem install which_osx
 
-== DEVELOPERS:
+## DEVELOPERS:
 
 After checking out the source, run:
 
@@ -45,11 +56,11 @@ After checking out the source, run:
 This task will install any missing dependencies, run the tests/specs,
 and generate the RDoc.
 
-== LICENSE:
+## LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2012 FIX
+Copyright (c) 2012 Kristian Freeman
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
