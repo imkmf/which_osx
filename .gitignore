@@ -1,4 +1,4 @@
 /blah
 /doc
 /pkg
-which_osx-*
+*.gem
