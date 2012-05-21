@@ -1,8 +1,14 @@
-=== 1.0.3 / 2012-05-21
+=== 1.0.4 / 2012-05-21
 
 * 1 minor enhancement
+
+  * Removed unnecessary dependencies and general clean-up.
+
+=== 1.0.3 / 2012-04-11
+
+* 1 major enhancement
   
-  * Removed unnecessary dependencies. I'm still here, folks!
+  * Added new commands (full_name, short_name, etc.)
 
 === 1.0.2 / 2012-04-11
 
