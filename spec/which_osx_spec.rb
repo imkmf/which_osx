@@ -9,7 +9,7 @@ require 'which_osx'
     end
 
     it "should convert version to a nice string" do
-      WhichOSX.version.should === "10.7.3"
+      WhichOSX.version.should =~ /[0-9][0-9].[0-9].[0-9]/
     end
 
     # it "should tell you when you're not on Mac OS X" do
@@ -17,19 +17,19 @@ require 'which_osx'
     # end
   end
 
-  describe "full version" do
+  describe "full name" do
     it "should return the full name of the OS" do
-      WhichOSX.full_version.should === "Mac OS X 10.7.3"
+      WhichOSX.full_name.should =~ /Mac OS X [0-9][0-9].[0-9].[0-9]/
     end
   end
 
   describe "short name" do
     it "should chomp the version into a major release number" do
-      WhichOSX.version.chop.chop.should === "10.7"
+      WhichOSX.version.chop.chop.should =~ /[0-9][0-9].[0-9]/
     end
 
     it "should return a major release name (Lion, Leopard, etc.)" do
-      WhichOSX.short_name.should === "Lion"
+      WhichOSX.short_name.should =~ /Lion|Leopard|Snow Leopard|Tiger|Panther/
     end
   end
 
