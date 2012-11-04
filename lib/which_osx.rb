@@ -7,7 +7,7 @@ output = `sw_vers`.scan(/\d\d\.\d\.\d/).flatten.to_s
 output.delete! "[]\""
 VERSION = output
 
-module WhichOSX
+class WhichOSX
   def self.version
     short_version = VERSION
     return short_version
@@ -40,5 +40,25 @@ module WhichOSX
     end
 
     return short_name
+  end
+
+  def self.is_mountain_lion
+    return true unless short_name != "Mountain Lion"
+  end
+
+  def self.is_lion
+    return true unless short_name != "Lion"
+  end
+
+  def self.is_snow_leopard
+    return true unless short_name != "Snow Leopard"
+  end
+
+  def self.is_leopard
+    return true unless short_name != "Leopard"
+  end
+
+  def self.is_tiger
+    return true unless short_name != "Tiger"
   end
 end

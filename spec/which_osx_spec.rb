@@ -33,3 +33,9 @@ require 'which_osx'
     end
   end
 
+  describe "is... checks" do
+    it "should return true if the OS matches the call" do
+      WhichOSX.is_mountain_lion.should be_true
+    end
+  end
+
