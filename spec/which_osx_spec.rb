@@ -9,23 +9,19 @@ require 'which_osx'
     end
 
     it "should convert version to a nice string" do
-      WhichOSX.version.should =~ /[0-9][0-9].[0-9].[0-9]/
+      WhichOSX.version.should =~ /1[0-9].[0-9].[0-9]/
     end
-
-    # it "should tell you when you're not on Mac OS X" do
-    #   # how best to mock a non-Mac OS X environment?
-    # end
   end
 
   describe "full name" do
     it "should return the full name of the OS" do
-      WhichOSX.full_name.should =~ /Mac OS X [0-9][0-9].[0-9].[0-9]/
+      WhichOSX.full_name.should =~ /Mac OS X 1[0-9].[0-9].[0-9]/
     end
   end
 
   describe "short name" do
     it "should chomp the version into a major release number" do
-      WhichOSX.version.chop.chop.should =~ /[0-9][0-9].[0-9]/
+      WhichOSX.version.chop.chop.should =~ /1[0-9].[0-9]/
     end
 
     it "should return a major release name (Lion, Leopard, etc.)" do
@@ -34,7 +30,7 @@ require 'which_osx'
   end
 
   describe "is... checks" do
-    it "should return true if the OS matches the call" do
+    it "should return true if the OS is Mountain Lion" do
       WhichOSX.is_mountain_lion.should be_true
     end
   end

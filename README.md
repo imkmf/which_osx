@@ -1,12 +1,10 @@
 # which_osx
 
-![The contemplative Mac](http://i.imgur.com/RNIc8.png)
-
 - http://github.com/imkmf/which_osx
 
 ## DESCRIPTION:
 
-A simple ruby program for outputting some information about your Mac.
+A simple ruby program for outputting some information about your Mac's version, as well as some clever ways of intepreting it.
 
 ## FEATURES/PROBLEMS:
 
@@ -16,36 +14,48 @@ A simple ruby program for outputting some information about your Mac.
 
 ## USAGE:
 
-which_osx can be imported into a project and used to return the current version of OS X (as of writing, my computer returns "10.7.3"):
+By requiring which_osx, you gain access to a couple useful methods:
 
-    require 'which_osx'
+### WhichOSX.version
 
-    module ForTheREADME
-      def self.test
-          who_am_i = WhichOSX.version
-        end
-    end
+    puts WhichOSX.version
+    => 10.8.2
 
-which_osx version 1.0.3 adds new methods for different outputs:
+### WhichOSX.full_name
+    
+    puts WhichOSX.full_name
+    => Mac OS X 10.8.2
 
-    $ WhichOSX.full_name
-    => Mac OS X 10.7.3
+### WhichOSX.short_name
 
-    $ WhichOSX.short_name
-    => Lion
+    puts WhichOSX.short_name
+    => Mountain Lion
+
+WhichOSX version 1.0.5 introduces boolean methods for checking the operating system:
+
+### WhichOSX.is_mountain_lion
+    
+    WhichOSX.is_mountain_lion
+    => true
+
+Includes `is_mountain_lion`, `is_lion`, `is_snow_leopard`, `is_leopard`, and `is_tiger`.
+
+### Binary
 
 Running from the command line returns the OS version by default:
 
     $ which_osx   
-    => 10.7.3
+    => This Mac is currently running 10.8.2.
 
 ## REQUIREMENTS:
 
-- None
+- [Rspec](http://rspec.info)
+- [YARD](http://yardoc.org) (and [redcarpet](http://yardoc.org) for Markdown formatting)
+
 
 ## INSTALL:
 
-    sudo gem install which_osx
+    gem install which_osx
 
 ## DEVELOPERS:
 

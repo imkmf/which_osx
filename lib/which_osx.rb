@@ -8,6 +8,12 @@ output.delete! "[]\""
 VERSION = output
 
 class WhichOSX
+
+  # Get the version of OS X currently running. 
+  # This method returns something in the format of 
+  # "XX.X.X" - it is used to help the rest of the commands
+  # execute properly.
+
   def self.version
     short_version = VERSION
     return short_version
@@ -17,10 +23,16 @@ class WhichOSX
     
   end
 
+  # Get the full name including version.
+  # Will always return "Mac OS X XX.X.X"
+
   def self.full_name
     full_name = "Mac OS X " + VERSION
     return full_name
   end
+
+  # Returns the common name for the operating system,
+  # such as "Mountain Lion" or "Tiger".
 
   def self.short_name
     # We just want the major versions -- 10.6, 10.7, etc.
@@ -42,23 +54,45 @@ class WhichOSX
     return short_name
   end
 
-  def self.is_mountain_lion
-    return true unless short_name != "Mountain Lion"
+  # A helper method for boolean checks. Compares the short name
+  # to the given version name and returns true or false accordingly.
+
+  def self.is(version)
+    if short_name == version
+      return true
+    else
+      return false
+    end
   end
+
+  # Checks if the operating system is currently running Mountain Lion.
+
+  def self.is_mountain_lion
+    self.is("Mountain Lion")
+  end
+
+  # Checks if the operating system is currently running Lion.
 
   def self.is_lion
-    return true unless short_name != "Lion"
+    self.is("Lion")
   end
+
+  # Checks if the operating system is currently running Snow Leopard.
 
   def self.is_snow_leopard
-    return true unless short_name != "Snow Leopard"
+    self.is("Snow Leopard")
   end
+
+  # Checks if the operating system is currently running Leopard.
 
   def self.is_leopard
-    return true unless short_name != "Leopard"
+    self.is("Leopard")
   end
 
+  # Checks if the operating system is currently running Tiger.
+
   def self.is_tiger
-    return true unless short_name != "Tiger"
+    self.is("Tiger")
   end
+  
 end
