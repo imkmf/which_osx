@@ -1,4 +1,5 @@
 /blah
+/.yardoc
 /pkg
 *.gem
 .DS*
