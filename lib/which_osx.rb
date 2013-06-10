@@ -1,10 +1,7 @@
 # A simple tool to determine the current version of Mac OS X.
 
 # Regex for "##.#.#"
-output = `sw_vers`.scan(/\d\d\.\d\.\d/).flatten.to_s
-
-# Take out some weird bits
-output.delete! "[]\""
+output = `sw_vers`.scan(/\d\d\.\d\.\d/).first
 VERSION = output
 
 class WhichOSX
@@ -20,7 +17,6 @@ class WhichOSX
     
   rescue Errno::ENOENT
     puts "It looks like you aren't using Mac OS X. Sorry!"
-    
   end
 
   # Get the full name including version.
@@ -49,6 +45,8 @@ class WhichOSX
       short_name = "Lion"
     when major_version == "10.8"
       short_name = "Mountain Lion"
+    when major_version == "10.9"
+      short_name = "Mavericks"
     end
 
     return short_name
@@ -63,6 +61,11 @@ class WhichOSX
     else
       return false
     end
+  end
+
+  # Checks if the operating system is currently running Mavericks.
+  def self.is_mavericks
+    self.is("Mavericks")
   end
 
   # Checks if the operating system is currently running Mountain Lion.

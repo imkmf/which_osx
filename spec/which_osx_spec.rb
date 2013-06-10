@@ -3,6 +3,12 @@
 
 require 'which_osx'
 
+describe WhichOSX do
+
+  before do
+    stub_const("WhichOSX::VERSION", "10.7.2")
+  end
+
   describe "version" do
     it "should issue a command that returns a string" do
       WhichOSX.version.class.should === "String"
@@ -30,8 +36,9 @@ require 'which_osx'
   end
 
   describe "is... checks" do
-    it "should return true if the OS is Mountain Lion" do
-      WhichOSX.is_mountain_lion.should be_true
+    it "should return true if the OS is Lion" do
+      WhichOSX.is_lion.should be_true
     end
   end
 
+end
