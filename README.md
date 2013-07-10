@@ -19,17 +19,17 @@ By requiring which_osx, you gain access to a couple useful methods:
 ### WhichOSX.version
 
     puts WhichOSX.version
-    => 10.8.2
+    => 10.9.0
 
 ### WhichOSX.full_name
     
     puts WhichOSX.full_name
-    => Mac OS X 10.8.2
+    => Mac OS X 10.9.0
 
 ### WhichOSX.short_name
 
     puts WhichOSX.short_name
-    => Mountain Lion
+    => Mavericks
 
 WhichOSX version 1.0.5 introduces boolean methods for checking the operating system:
 
