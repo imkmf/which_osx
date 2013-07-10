@@ -33,12 +33,12 @@ By requiring which_osx, you gain access to a couple useful methods:
 
 WhichOSX version 1.0.5 introduces boolean methods for checking the operating system:
 
-### WhichOSX.is_mountain_lion
+### WhichOSX.is_mavericks
     
-    WhichOSX.is_mountain_lion
+    WhichOSX.is_mavericks
     => true
 
-Includes `is_mountain_lion`, `is_lion`, `is_snow_leopard`, `is_leopard`, and `is_tiger`.
+Includes `is_mavericks`, `is_mountain_lion`, `is_lion`, `is_snow_leopard`, `is_leopard`, and `is_tiger`.
 
 ### Binary
 
