@@ -6,15 +6,15 @@ VERSION = output
 
 class WhichOSX
 
-  # Get the version of OS X currently running. 
-  # This method returns something in the format of 
+  # Get the version of OS X currently running.
+  # This method returns something in the format of
   # "XX.X.X" - it is used to help the rest of the commands
   # execute properly.
 
   def self.version
     short_version = VERSION
     return short_version
-    
+
   rescue Errno::ENOENT
     puts "It looks like you aren't using Mac OS X. Sorry!"
   end
@@ -23,7 +23,7 @@ class WhichOSX
   # Will always return "Mac OS X XX.X.X"
 
   def self.full_name
-    full_name = "Mac OS X " + VERSION
+    full_name = "Mac OS X " + version
     return full_name
   end
 
@@ -32,7 +32,7 @@ class WhichOSX
 
   def self.short_name
     # We just want the major versions -- 10.6, 10.7, etc.
-    major_version = VERSION.chop.chop
+    major_version = version.chop.chop
 
     case
     when major_version == "10.4"
@@ -97,5 +97,5 @@ class WhichOSX
   def self.is_tiger
     self.is("Tiger")
   end
-  
+
 end

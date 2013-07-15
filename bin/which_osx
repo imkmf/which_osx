@@ -2,4 +2,4 @@
 
 require 'which_osx'
 
-puts "This Mac is currently running #{ WhichOSX.version }"
+puts "This Mac is currently running #{ WhichOSX.full_name }."
