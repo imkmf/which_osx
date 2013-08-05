@@ -1,7 +1,12 @@
 # A simple tool to determine the current version of Mac OS X.
 
 # Regex for "##.#.#"
-output = `sw_vers`.scan(/\d\d\.\d\.\d/).first
+def output
+  `sw_vers`.scan(/\d\d\.\d\.\d/).first
+rescue Errno::ENOENT => e
+  puts "This computer is not running Mac OS X. This gem won't work! Sorry :("
+end
+
 VERSION = output
 
 class WhichOSX
