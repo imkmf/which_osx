@@ -2,7 +2,7 @@
 
 # Regex for "##.#.#"
 def output
-  `sw_vers`.scan(/\d\d\.\d\.\d/).first
+  `sw_vers`.scan(/\d\d\.\d(?:.\d)?/).first
 rescue Errno::ENOENT => e
   puts "This computer is not running Mac OS X. This gem won't work! Sorry :("
 end
